@@ -189,7 +189,7 @@ void tmate_session_start(void)
 	 *   we are setting up the tmate identity.
 	 * - While we are parsing the config file, we need to be able to
 	 *   serialize it, and so we need a worker encoder.
-	 */
+
 	if (tmate_foreground) {
 		tmate_set_val("foreground", "true");
 		tmate_info("To connect to the session locally, run: tmate -S %s attach", socket_path);
@@ -199,6 +199,8 @@ void tmate_session_start(void)
 		cfg_add_cause("%s", "Press <q> or <ctrl-c> to continue");
 		cfg_add_cause("%s", "---------------------------------------------------------------------");
 	}
+
+	 */
 
 	send_authorized_keys();
 	tmate_write_uname();
